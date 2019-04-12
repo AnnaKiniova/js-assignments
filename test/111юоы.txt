@@ -1,0 +1,4 @@
+function encodeToRot13(str) {
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split();
+    console.log (alphabet);
+}

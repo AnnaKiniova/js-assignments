@@ -47,6 +47,7 @@ describe('01-strings-tasks', function() {
         assert.equal('To be or to be', tasks.removeFirstOccurrences('To be or not to be', ' not'));
         assert.equal('I like legs', tasks.removeFirstOccurrences('I like legends', 'end'));
         assert.equal('ABAB', tasks.removeFirstOccurrences('ABABAB','BA'));
+        assert.equal('11112112112', tasks.removeFirstOccurrences('112112112112','2'))
     });
 
     it.optional('unbracketTag should remove first and last angle brackets from tag string', function() {
