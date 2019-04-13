@@ -57,7 +57,7 @@ function getStringLength(value) {
 function getStringFromTemplate(firstName, lastName) {
     return (`Hello, ${firstName} ${lastName}!`)
 }
-debugger;
+
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
@@ -227,12 +227,21 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split();
-    let result = [];
-    str.forEach(function(item, i , arr){for (let i=0; i<alphabet.length; i++) if (item == alphabet[i]) {
-        result.push(alphabet[i+13]);
-    } });
-}
+    let result = "";
+    for (let i = 0; i<str.length; i++) {
+        if ((str[i].toLowerCase >= "a")&&(str[i].toLowerCase <= "z")) {
+            if ((str.charCodeAt(i) < "M".charCodeAt(0))||((str.charCodeAt(i)>"z".charCodeAt(0))&&(str.charCodeAt(i)<"m".charCodeAt(0))))  {
+                result = result + (String.fromCharCode(str.charCodeAt(i)+13))
+            } else {
+                result = result + (String.fromCharCode(str.charCodeAt(i)-13));
+            } 
+        } else {
+            result = result + str[i];
+            } 
+    };
+    return result;
+} 
+
 
 /**
  * Returns true if the value is string; otherwise false.
