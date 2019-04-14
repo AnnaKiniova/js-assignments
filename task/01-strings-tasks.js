@@ -229,18 +229,20 @@ function getRectangleString(width, height) {
 function encodeToRot13(str) {
     let result = "";
     for (let i = 0; i<str.length; i++) {
-        if ((str[i].toLowerCase >= "a")&&(str[i].toLowerCase <= "z")) {
-            if ((str.charCodeAt(i) < "M".charCodeAt(0))||((str.charCodeAt(i)>"z".charCodeAt(0))&&(str.charCodeAt(i)<"m".charCodeAt(0))))  {
+        if (((str[i] >= "a")&&(str[i] <= "z"))||((str[i] >= "A")&&(str[i] <= "Z"))) {
+            if (((str[i] <= "m")&&(str[i]>="a"))||((str[i]>="A")&&(str[i]<="M")))  {
                 result = result + (String.fromCharCode(str.charCodeAt(i)+13))
-            } else {
-                result = result + (String.fromCharCode(str.charCodeAt(i)-13));
+            } if (((str[i] > "m")&&(str[i] <="z"))||((str[i] > "M")&&(str[i] <="Z"))){
+            result = result + (String.fromCharCode(str.charCodeAt(i)-13));
             } 
         } else {
             result = result + str[i];
             } 
     };
     return result;
-} 
+
+}
+ 
 
 
 /**

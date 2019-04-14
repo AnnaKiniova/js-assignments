@@ -328,8 +328,15 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-    ;
+    let temp = []; 
+    for (let i = 0; i < str.length; i++) {
+        if (((str[i] == "{")&&(str[str.length-1] == "}"))||((str[i] == "[")&&(str[str.length-1] == "]"))||((str[i] == "(")&&(str[str.length-1] == ")"))||((str[i] == "<")&&(str[str.length-1] == ">")))
+        {temp.pop()} else {temp.push(str[i])};
+    if (str.length == 0) return true;
+    return false;
+    }
 }
+
 
 
 /**
@@ -365,7 +372,7 @@ function isBracketsBalanced(str) {
  */
 function timespanToHumanString(startDate, endDate) {
     let d = endDate - startDate;
-    
+
 }
 
 
