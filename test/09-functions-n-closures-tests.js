@@ -48,9 +48,12 @@ describe('09-functions-n-closures-tasks', function() {
             }
         ].forEach(data => {
             data.results.forEach(test => {
+                console.log(test.y+'='+data.polynom(test.x))
                 assert(
                     test.y == data.polynom(test.x)
+                    
                 )
+                
             });
         });
     });

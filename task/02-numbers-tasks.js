@@ -54,11 +54,8 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    let average = ((value1.toFixed() + value2.toFixed())/2);
-    if (Number.isSafeInteger(average)) return average;
-    else return Infinity;
-    //
-}
+    return (value1.toFixed()/2 + value2.toFixed()/2);
+   }
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
@@ -241,14 +238,14 @@ function toNumber(value, def) {
     if (value == null) {
         return def
     } else {
-        if (value.parseInt() !== undefined) {
-        return value.parseInt();
+        if ((parseInt(value) !== undefined)&&(!isNaN(parseInt(value)))) {
+        return parseInt(value);
     } else {
-        if (value instanceof Function) {
-            // 
+        if (value instanceof Function) { 
             return value} 
         }
-    }return def;
+    }
+    return def;
 }
 
 module.exports = {
